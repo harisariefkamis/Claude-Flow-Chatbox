@@ -1,0 +1,35 @@
+{
+  "services": {
+    "backend": {
+      "buildCommand": "npm install && npm run build",
+      "startCommand": "npm run start",
+      "environmentFile": ".env",
+      "port": 5000,
+      "healthcheck": "/health",
+      "variables": {
+        "NODE_ENV": "production",
+        "PORT": "5000"
+      },
+      "secrets": {
+        "MONGODB_URI": "${{ secrets.MONGODB_URI }}",
+        "ANTHROPIC_API_KEY": "${{ secrets.ANTHROPIC_API_KEY }}",
+        "JWT_SECRET": "${{ secrets.JWT_SECRET }}"
+      }
+    },
+    "mongodb": {
+      "image": "mongo:latest",
+      "port": 27017,
+      "environment": {
+        "MONGO_INITDB_DATABASE": "claude-flow"
+      }
+    }
+  },
+  "plugins": [
+    {
+      "source": "mongodb",
+      "config": {
+        "datadir": "/data/db"
+      }
+    }
+  ]
+}
