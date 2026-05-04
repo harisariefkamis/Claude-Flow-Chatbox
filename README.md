@@ -1,4 +1,4 @@
-# **GUIDE COMPLETE **
+# **GUIDE COMPLETE**
 
 
 ### 1. .env.example
