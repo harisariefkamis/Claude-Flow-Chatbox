@@ -1,8 +1,5 @@
-# **COMPLETE FILE LIST - COPY & PASTE GUIDE**
+# **GUIDE COMPLETE **
 
-Buat file-file berikut sesuai urutan:
-
-## ROOT FILES
 
 ### 1. .env.example
 [Copy content dari bagian ENV CONFIGURATION di atas]
