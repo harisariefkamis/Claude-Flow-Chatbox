@@ -1,0 +1,37 @@
+{
+  "projectName": "claude-flow-chatbox",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "nodeVersion": "18.x",
+  "env": {
+    "REACT_APP_API_URL": {
+      "description": "Backend API URL",
+      "required": true
+    },
+    "REACT_APP_WEBSOCKET_URL": {
+      "description": "WebSocket URL",
+      "required": true
+    }
+  },
+  "routes": [
+    {
+      "src": "^/api(/.*)?$",
+      "destination": "https://claude-flow-backend.railway.app$1"
+    },
+    {
+      "src": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "github": {
+    "enabled": true,
+    "autoAlias": true,
+    "autoJobCancelPreviousOnPush": true
+  },
+  "git": {
+    "deploymentEnabled": {
+      "main": true
+    }
+  }
+}
